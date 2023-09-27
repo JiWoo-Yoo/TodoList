@@ -29,8 +29,5 @@ input[type="text"] {
   position: center;
   text-align: center;
   font-size: 50px;
-}
-
-.task {
-  color: pink;
+  list-style: none;
 }
