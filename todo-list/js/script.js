@@ -26,7 +26,10 @@ function paintToDo(taskObj) {
   const span = document.createElement("span");
   span.innerText = taskObj.text;
   const delButton = document.createElement("button");
-  delButton.innerText = "X";
+  delButton.innerText = "🙆🏻‍♀️";
+  delButton.style.backgroundColor = "darkslategrey";
+  delButton.style.color = "white";
+  delButton.style.fontSize = "50px";
   delButton.addEventListener("click", delToDo);
   li.appendChild(span);
   li.appendChild(delButton);
