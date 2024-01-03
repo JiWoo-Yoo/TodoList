@@ -6,9 +6,6 @@ const toDoList = document.getElementById("todo-list");
 let toDos = [];
 const TODOS_KEY = "todos";
 
-// const loginInput = document.querySelector("#container input");
-// const loginButton = document.querySelector("#container button");
-//
 function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
@@ -26,7 +23,7 @@ function paintToDo(taskObj) {
   const span = document.createElement("span");
   span.innerText = taskObj.text;
   const delButton = document.createElement("button");
-  delButton.innerText = "🙆🏻‍♀️";
+  delButton.innerText = "❌";
   delButton.style.backgroundColor = "darkslategrey";
   delButton.style.color = "white";
   delButton.style.fontSize = "50px";
@@ -53,7 +50,6 @@ function addClick() {
 addButton.addEventListener("click", addClick);
 const savedToDos = localStorage.getItem(TODOS_KEY);
 if (savedToDos) {
-  // if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos);
   toDos = parsedToDos;
   parsedToDos.forEach(paintToDo);
