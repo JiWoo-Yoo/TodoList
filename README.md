@@ -1,3 +1,5 @@
 # TodoList
 
-vanillaJS, html5, css3을 이용한 todolist.
+간단한 ToDoList 만들기
+
+사용 기술: JavaScript(vanilla), html, css

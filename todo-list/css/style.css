@@ -1,33 +1,16 @@
-.maintitle {
-  font-family: "Courier New", Courier, monospace;
-  color: aliceblue;
-  position: center;
+header {
+  color: white;
   text-align: center;
   font-size: 100px;
+  position: center;
 }
 
 body {
-  background-color: darkslategrey;
+  background-color: darkslategray;
 }
 
-#container {
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-input[type="text"] {
-  width: 70%;
-  padding: 8px;
-  margin-right: 10px;
+#todo-input {
 }
 
 #todo-list {
-  font-family: "Courier New", Courier, monospace;
-  color: aliceblue;
-  position: center;
-  text-align: center;
-  font-size: 50px;
-  list-style: none;
 }
