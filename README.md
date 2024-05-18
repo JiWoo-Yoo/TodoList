@@ -6,6 +6,5 @@ JavaScript로 Todolist 기능 구현
 
 
 - javaScript / HTML / CSS
-- googleapi icon
 
 - [try this!](https://jiwoo-yoo.github.io/TodoList)
