@@ -1,29 +1,29 @@
 body {
   display: flex;
   height: 100vh; /* 화면 전체 높이만큼 body로 설정 */
+  flex-direction: column;
   align-items: center; /* 수직 가운데 정렬 */
-  background-color: darkslategray;
+  background-color: #BBB1D6;
   margin: 0;
+  padding: 0;
 }
 
 header {
   color: white;
   text-align: center;
-  flex: 1; /* 왼쪽에 위치하도록 설정 */
   font-size: 100px;
   position: center;
-  width: 50%;
-  padding: 50px;
-  font-family: "Courier New", Courier, monospace;
+  margin: 20px;
+  margin-top: 30px;
 }
 
 main {
   background-color: white;
   text-align: center;
-  flex: 1; /* 오른쪽에 위치하도록 설정 */
-  padding: 10px;
-  width: 50%;
-  margin: 50px;
+  padding: 50px;
+  margin-top: 20px;
+  height: 60%;
+  border-radius: 0.5rcap;
 }
 
 #todo-input {
@@ -32,27 +32,74 @@ main {
 
 input {
   font-size: 30px;
+  padding: 10px 20px;
+  border-radius: 0.5rcap;
+  border: 1px solid darkgray;
+  outline: none;
+  color: gray;
+  vertical-align: top; /* 한글-영어크기차이 고정 */
+}
+
+input:hover {
+  background-color: #F2F2F2;
+  transition-duration:.5s;
+}
+
+input::placeholder {
+  color: gainsboro;
 }
 
 main button {
   font-size: 30px;
-  background-color: darkslategray;
+  background-color: darkgrey;
   color: white;
   border-radius: 0.5rcap;
+  border: none;
+  padding: 10px 20px;
+  border: 1px solid darkgrey;
+}
+
+main button:hover {
+  background-color: gainsboro;
+  color: #BBB1D6;
+  cursor: pointer;
+  transition-duration: .5s;
+  border: 1px solid gainsboro;
 }
 
 #todo-list {
-  border: 2px solid darkslategray;
-  padding: 30px;
   text-align: left;
-  color: darkslategray;
-  font-size: 30px;
-  list-style-type: square;
+  color: gray;
+  font-size: 20px;
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+#todo-list li {
+  margin: 10px;
+  border-radius: 0.5rcap;
+  border: 1px solid darkgrey;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#todo-list li:hover {
+  transform: scale(1.03);
+  transition-duration:.5s;
+  cursor: pointer;
 }
 
 #todo-list button {
-  font-size: 30px;
-  background-color: white;
-  color: darkslategray;
-  border: 1px solid darkslategray;
+  font-size: 20px;
+  left: 0%;
+  padding: 10px 10px;
+  color: gray;
+  background-color: transparent;
+}
+
+#todo-list button:hover {
+  background-color: darkgrey;
+  color: white;
 }

@@ -24,7 +24,7 @@ function showTodo(todoObj) {
   const delBtn = document.createElement("button");
   li.id = todoObj.id;
   li.innerText = todoObj.text;
-  delBtn.innerText = "√";
+  delBtn.innerText = "DEL";
   delBtn.addEventListener("click", deleteTodo);
   li.appendChild(delBtn);
   todoList.appendChild(li);
