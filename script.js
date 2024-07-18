@@ -11,6 +11,20 @@ function saveTodo() {
   localStorage.setItem(todo_key, JSON.stringify(todos)); // 두번째인자는 string
 }
 
+function checkTodo(event) {
+  const check_li = event.target.parentElement;
+  // check 여부 토글
+  check_li.classList.toggle("checked");
+  // todos를 탐색하여 해당 id를 가진 녀석의 checked를 true로 변경
+  todos.forEach((todo) => {
+    if (todo.id === parseInt(check_li.parentElement.id)) {
+      todo.checked = !todo.checked;
+      return false;
+    }
+  });
+  saveTodo();
+}
+
 function deleteTodo(event) {
   const del_li = event.target.parentElement; // click event가 일어난 버튼의 부모(=li)
   // todos 배열에서 del_li의 id와 정확히 일치하는 값을 찾아 제거
@@ -19,13 +33,28 @@ function deleteTodo(event) {
   saveTodo();
 }
 
-function showTodo(todoObj) {
+function paintTodo(todoObj) {
   const li = document.createElement("li");
+  const checkDiv = document.createElement("div");
+  const checkBtn = document.createElement("button");
+  const text = document.createElement('span');
   const delBtn = document.createElement("button");
   li.id = todoObj.id;
-  li.innerText = todoObj.text;
-  delBtn.innerText = "DEL";
+  checkBtn.id = 'check-btn';
+  delBtn.id = 'del-btn';
+
+  if(todoObj.checked == true) {
+    checkDiv.classList.add('checked');
+  }
+  
+  text.textContent = todoObj.text;
+  delBtn.textContent = "DEL";
+
+  checkBtn.addEventListener('click', checkTodo);
   delBtn.addEventListener("click", deleteTodo);
+  checkDiv.appendChild(checkBtn);
+  checkDiv.appendChild(text);
+  li.appendChild(checkDiv);
   li.appendChild(delBtn);
   todoList.appendChild(li);
 }
@@ -39,8 +68,9 @@ function clickAdd() {
     const todoObj = {
       id: Date.now(), // id를 현재 시각으로 부여
       text: todo,
+      checked: false,
     };
-    showTodo(todoObj);
+    paintTodo(todoObj);
     todoInput.value = ""; // 입력 칸 비우기
     todos.push(todoObj); // todo를 목록에 저장
     saveTodo(); // localStorage에 todos 업데이트
@@ -57,6 +87,6 @@ if (items) {
 
   for (let i = 0; i < todos.length; i++) {
     // todos를 순서대로 화면에 표시
-    showTodo(todos[i]);
+    paintTodo(todos[i]);
   }
 }

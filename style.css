@@ -75,6 +75,10 @@ main button:hover {
   padding-left: 0;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 #todo-list li {
   margin: 10px;
   border-radius: 0.5rcap;
@@ -83,6 +87,7 @@ main button:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  overflow-y: scroll;
 }
 
 #todo-list li:hover {
@@ -91,7 +96,29 @@ main button:hover {
   cursor: pointer;
 }
 
-#todo-list button {
+#todo-list li div {
+  vertical-align: top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#todo-list li .checked {
+  /*취소선*/
+  text-decoration: line-through;
+}
+
+#todo-list li .checked #check-btn{
+  /*취소선*/
+  background-color: darkgrey;
+}
+
+#check-btn:hover {
+  background-color: darkgrey;
+}
+
+#del-btn {
   font-size: 20px;
   left: 0%;
   padding: 10px 10px;
@@ -99,7 +126,15 @@ main button:hover {
   background-color: transparent;
 }
 
-#todo-list button:hover {
+#del-btn:hover {
   background-color: darkgrey;
   color: white;
+}
+
+#check-btn {
+  font-size: 20px;
+  right: 0%;
+  padding: 10px 10px;
+  color: gray;
+  background-color: transparent;
 }
