@@ -73,6 +73,8 @@ main button:hover {
   font-size: 20px;
   list-style-position: inside;
   padding-left: 0;
+  overflow-y: scroll;
+  height: 80%;
 }
 
 ::-webkit-scrollbar {
@@ -87,7 +89,6 @@ main button:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  overflow-y: scroll;
 }
 
 #todo-list li:hover {
