@@ -24,3 +24,9 @@ daily todo를 관리하기 위한 간단한 투두리스트 프로젝트.
 
 - 할 일 추가, 삭제, 완료, 모두 삭제
 - localStorage를 이용한 데이터 저장
+
+
+### Upcoming Features
+- Drag & Drop
+- 할 일 추가 시 맨 위에 추가
+- 기기에 따른 반응형 스타일
