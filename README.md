@@ -1,23 +1,26 @@
-# TodoList
+# Simple Todo List with Vanilla JavaScript
 
-JavaScript로 Todolist 기능 구현
+daily todo를 관리하기 위한 간단한 투두리스트 프로젝트.
+
+
+## Screenshots
 
 <img width="968" alt="image" src="https://github.com/user-attachments/assets/3f17d9da-f6e8-45af-b4b8-7e8a07b9294a">
 
 
-### 기술 스택
-
-- HTML / CSS
-- JavaScript
-- github pages
-
-### 라이브
+### Demo
 
 - [try this!](https://jiwoo-yoo.github.io/TodoList)
 
 
-### 기능
+### Stack
 
-- 할 일 추가 / 삭제
-- localStorage 저장 / 삭제
-- (24.07.28) 할 일 완료시 토글 기능(localStorage에 반영)
+- HTML5 / CSS3
+- JavaScript
+- github pages
+
+
+### Features
+
+- 할 일 추가, 삭제, 완료, 모두 삭제
+- localStorage를 이용한 데이터 저장
