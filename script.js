@@ -1,6 +1,7 @@
 const todoForm = document.querySelector("#todo-input");
 const todoInput = todoForm.querySelector("input");
-const todoButton = todoForm.querySelector("button");
+const todoButton = todoForm.querySelector("#add-btn");
+const delAllButton = todoForm.querySelector("#del-all");
 const todoList = document.querySelector("#todo-list");
 
 let todos = []; // 할 일 목록을 저장할 배열
@@ -78,6 +79,12 @@ function clickAdd() {
   }
 }
 
+function deleteAllTodos() {
+  localStorage.removeItem(todo_key);
+  todoList.innerHTML = "";
+  todos = [];
+}
+
 todoButton.addEventListener("click", clickAdd); // 버튼을 클릭하면 clickAdd 실행
 // localstorage에서 todos 확인
 const items = localStorage.getItem(todo_key);
@@ -95,4 +102,13 @@ if (items) {
 // enter 입력 시 add 버튼 누르는 기능
 todoInput.addEventListener('keypress', (e) => {
   if(e.code == 'Enter') clickAdd();
+});
+
+delAllButton.addEventListener("click", () => {
+  if (todoList.innerHTML) {
+    if(!confirm('할 일을 모두 삭제하시겠습니까?')) {
+      return false;
+    }
+    deleteAllTodos();
+  }
 });
