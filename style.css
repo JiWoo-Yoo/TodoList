@@ -59,6 +59,18 @@ main button {
   border: 1px solid darkgrey;
 }
 
+#del-all {
+  background-color: salmon;
+}
+
+#del-all:hover {
+  background-color: white;
+  color: salmon;
+  cursor: pointer;
+  border: 1px solid salmon;
+  transition-duration:.5s;
+}
+
 main button:hover {
   background-color: gainsboro;
   color: #BBB1D6;
