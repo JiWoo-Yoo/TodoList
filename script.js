@@ -90,3 +90,8 @@ if (items) {
     paintTodo(todos[i]);
   }
 }
+
+// enter 입력 시 add 버튼 누르는 기능
+todoInput.addEventListener('keypress', (e) => {
+  if(e.code == 'Enter') clickAdd();
+});
