@@ -74,6 +74,7 @@ function clickAdd() {
     todoInput.value = ""; // 입력 칸 비우기
     todos.push(todoObj); // todo를 목록에 저장
     saveTodo(); // localStorage에 todos 업데이트
+    todoInput.focus(); // 다시 input에 focus
   }
 }
 
